@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react'
 import {StyleSheet} from 'react-native'
 import {Text} from 'react-native-elements'
 import {SafeAreaView} from 'react-navigation'
-import {requestPermissionAsync} from 'expo-location'
+import {requestPermissionsAsync} from 'expo-location'
 import Map from '../components/Map'
 
 const TrackCreateScreen = () => {
     const [err, setErr] = useState(null)
     const startWatching = async() => {
         try {
-            await requestPermissionAsync()
+            await requestPermissionsAsync()
         } catch (error) {
             setErr(error)
         }
