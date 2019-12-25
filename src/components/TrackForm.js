@@ -19,6 +19,7 @@ const TrackForm = () => {
             placeholder="Enter name"
             onChangeText={changeName} />
         </Spacer>
+        <Spacer>
         {
             recording ? 
             <Button 
@@ -29,6 +30,13 @@ const TrackForm = () => {
             title="Start Recording"
             onPress={startRecording} />
         }
+        </Spacer>
+        <Spacer>
+        {
+            !recording && locations.length ?
+            <Button title="Simpan" /> : null
+        }
+        </Spacer>
         </>
     )
 }
